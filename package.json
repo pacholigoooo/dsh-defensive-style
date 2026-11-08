@@ -1,0 +1,37 @@
+{
+  "name": "dsh-defensive-style",
+  "version": "1.1.2",
+  "description": "为 DeepSeek Harness 的中文聊天加入逐句辨析风格",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacholigoooo/dsh-defensive-style.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "mdast-util-from-markdown": "2.0.2",
+    "mdast-util-gfm-table": "2.0.0",
+    "micromark-extension-gfm-table": "2.1.1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "node build.mjs",
+    "prepack": "node build.mjs",
+    "test": "node --test test/contracts.test.js"
+  }
+}
